@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <rect x="0" y="0" width="60" height="60" rx="14" fill="#1e40af"/>
+  <path d="M10 16 Q30 11 50 16 L50 25 Q30 20 10 25 Z" fill="#fde68a" opacity="0.92"/>
+  <path d="M10 25 Q30 20 50 25 L50 34 Q30 29 10 34 Z" fill="#fdba74" opacity="0.92"/>
+  <path d="M10 34 Q30 29 50 34 L50 43 Q30 38 10 43 Z" fill="#fca5a5" opacity="0.92"/>
+  <text x="20" y="44" font-family="sans-serif" font-size="32" font-weight="700" fill="#ffffff" opacity="0.22">D</text>
+</svg>
