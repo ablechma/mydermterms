@@ -710,29 +710,60 @@ function PrivacyPage({ onBack, onNavigate }) {
   );
 }
 
+function getInitialState() {
+  var path = window.location.pathname;
+  if (path.indexOf("/condition/") === 0) {
+    var slug = path.replace("/condition/", "").replace(/\/$/, "");
+    var found = CONDITIONS.find(function(c) { return c.id === slug; });
+    if (found) return { active: found, page: null };
+  }
+  if (path === "/disclaimer") return { active: null, page: "disclaimer" };
+  if (path === "/terms") return { active: null, page: "terms" };
+  if (path === "/privacy") return { active: null, page: "privacy" };
+  return { active: null, page: null };
+}
+
 export default function MyDermTerms() {
-  var _s = useState(null);
+  var init = getInitialState();
+  var _s = useState(init.active);
   var active = _s[0]; var setActive = _s[1];
-  var _p = useState(null);
+  var _p = useState(init.page);
   var page = _p[0]; var setPage = _p[1];
+
+  function updateUrl(path) {
+    window.history.pushState(null, "", path);
+  }
 
   function handleNavigate(pg) {
     setActive(null);
     setPage(pg);
+    updateUrl("/" + pg);
     window.scrollTo(0, 0);
   }
 
+  function handleSelect(condition) {
+    setActive(condition);
+    updateUrl("/condition/" + condition.id);
+    window.scrollTo(0, 0);
+  }
+
+  function handleBackToHome() {
+    setActive(null);
+    setPage(null);
+    updateUrl("/");
+  }
+
   if (page === "disclaimer") {
-    return <DisclaimerPage onBack={function(){setPage(null)}} onNavigate={handleNavigate} />;
+    return <DisclaimerPage onBack={function(){setPage(null);updateUrl("/")}} onNavigate={handleNavigate} />;
   }
   if (page === "terms") {
-    return <TermsPage onBack={function(){setPage(null)}} onNavigate={handleNavigate} />;
+    return <TermsPage onBack={function(){setPage(null);updateUrl("/")}} onNavigate={handleNavigate} />;
   }
   if (page === "privacy") {
-    return <PrivacyPage onBack={function(){setPage(null)}} onNavigate={handleNavigate} />;
+    return <PrivacyPage onBack={function(){setPage(null);updateUrl("/")}} onNavigate={handleNavigate} />;
   }
   if (active) {
-    return <ConditionPage condition={active} onBack={function(){setActive(null)}} onNavigate={handleNavigate} />;
+    return <ConditionPage condition={active} onBack={handleBackToHome} onNavigate={handleNavigate} />;
   }
-  return <ConditionList onSelect={setActive} onNavigate={handleNavigate} />;
+  return <ConditionList onSelect={handleSelect} onNavigate={handleNavigate} />;
 }
