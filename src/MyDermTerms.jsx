@@ -555,7 +555,7 @@ function ConditionList({ onSelect, onNavigate }) {
             <LogoIcon size={40} />
             <span style={{ fontSize:20, fontWeight:800, letterSpacing:-0.5 }}>MyDermTerms</span>
             <div style={{ flex:1 }} />
-            <a href="/downloads/MyDermTerms_QR_Handout.docx" download style={{
+            <a href="/downloads/MyDermTerms_QR_Handout.pdf" download style={{
               display:"flex", alignItems:"center", gap:10, padding:"10px 20px",
               borderRadius:12, backgroundColor:"rgba(255,255,255,0.22)",
               border:"1.5px solid rgba(255,255,255,0.4)", color:"#fff",
