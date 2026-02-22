@@ -370,7 +370,7 @@ function Section({ title, emoji, accent, children }) {
   );
 }
 
-function ConditionPage({ condition, onBack }) {
+function ConditionPage({ condition, onBack, onNavigate }) {
   var permalink = "https://mydermterms.com/condition/" + condition.id;
   return (
     <div style={{ minHeight:"100vh", backgroundColor:"#f9fafb", fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
@@ -453,6 +453,7 @@ function ConditionPage({ condition, onBack }) {
           <p style={{ fontSize:13, color:"#0c4a6e", margin:0, fontFamily:"monospace", wordBreak:"break-all" }}>{permalink}</p>
         </div>
       </div>
+      <Footer onNavigate={onNavigate} />
     </div>
   );
 }
@@ -530,7 +531,7 @@ function ConditionTile({ condition, onSelect, hoveredId, setHoveredId }) {
   );
 }
 
-function ConditionList({ onSelect }) {
+function ConditionList({ onSelect, onNavigate }) {
   var _s = useState("");
   var query = _s[0]; var setQuery = _s[1];
   var _c = useState(null);
@@ -611,16 +612,127 @@ function ConditionList({ onSelect }) {
           </div>
         )}
       </div>
+      <Footer onNavigate={onNavigate} />
     </div>
+  );
+}
+
+function Footer({ onNavigate }) {
+  var linkStyle = { color:"#6b7280", textDecoration:"none", fontSize:13, cursor:"pointer", background:"none", border:"none", padding:0, fontFamily:"inherit" };
+  return (
+    <div style={{ borderTop:"1px solid #e5e7eb", backgroundColor:"#f9fafb", padding:"24px 16px 32px", marginTop:40 }}>
+      <div style={{ maxWidth:1200, margin:"0 auto", textAlign:"center" }}>
+        <div style={{ display:"flex", justifyContent:"center", gap:24, flexWrap:"wrap", marginBottom:16 }}>
+          <button onClick={function(){onNavigate("disclaimer")}} style={linkStyle}>Medical Disclaimer</button>
+          <button onClick={function(){onNavigate("terms")}} style={linkStyle}>Terms of Use</button>
+          <button onClick={function(){onNavigate("privacy")}} style={linkStyle}>Privacy Policy</button>
+        </div>
+        <p style={{ fontSize:12, color:"#9ca3af", margin:0 }}>{"\u00A9"} {new Date().getFullYear()} MyDermTerms.com. All rights reserved.</p>
+        <p style={{ fontSize:11, color:"#d1d5db", margin:"6px 0 0" }}>This website is for educational purposes only and does not constitute medical advice.</p>
+      </div>
+    </div>
+  );
+}
+
+function LegalPage({ title, onBack, onNavigate, children }) {
+  return (
+    <div style={{ minHeight:"100vh", backgroundColor:"#f9fafb", fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
+      <div style={{ position:"sticky", top:0, zIndex:10, backgroundColor:"rgba(255,255,255,0.95)", borderBottom:"1px solid #e5e7eb", backdropFilter:"blur(8px)" }}>
+        <div style={{ maxWidth:800, margin:"0 auto", padding:"12px 16px", display:"flex", alignItems:"center", gap:12 }}>
+          <button onClick={onBack} style={{ width:36, height:36, borderRadius:10, border:"none", backgroundColor:"#f3f4f6", cursor:"pointer", fontSize:18, display:"flex", alignItems:"center", justifyContent:"center" }}>{"<"}</button>
+          <div style={{ flex:1, display:"flex", alignItems:"center", gap:8 }}>
+            <LogoIcon size={28} />
+            <span style={{ fontWeight:700, fontSize:14, color:"#111827" }}>MyDermTerms</span>
+          </div>
+        </div>
+      </div>
+      <div style={{ maxWidth:800, margin:"0 auto", padding:"32px 16px 20px" }}>
+        <h1 style={{ fontSize:28, fontWeight:800, color:"#111827", margin:"0 0 24px" }}>{title}</h1>
+        <div style={{ fontSize:15, color:"#374151", lineHeight:1.8 }}>{children}</div>
+      </div>
+      <Footer onNavigate={onNavigate} />
+    </div>
+  );
+}
+
+function DisclaimerPage({ onBack, onNavigate }) {
+  return (
+    <LegalPage title="Medical Disclaimer" onBack={onBack} onNavigate={onNavigate}>
+      <p style={{ margin:"0 0 16px" }}><strong>Last updated:</strong> February 2026</p>
+      <p style={{ margin:"0 0 16px" }}>The information provided on MyDermTerms.com is intended for general educational and informational purposes only. It is not intended to be, and should not be used as, a substitute for professional medical advice, diagnosis, or treatment.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>No Doctor-Patient Relationship.</strong> Use of this website does not create a doctor-patient or other healthcare professional relationship between you and MyDermTerms.com or any of its contributors.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>Not Medical Advice.</strong> The content on this site, including text, descriptions, images, and other materials, is provided for informational purposes only. Nothing on this website should be construed as medical advice or used to diagnose, treat, cure, or prevent any medical condition.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>Consult Your Physician.</strong> Always seek the advice of a qualified dermatologist or other healthcare provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this website.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>No Guarantees.</strong> While we strive to provide accurate and up-to-date information, MyDermTerms.com makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information contained on this website.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>Emergency Situations.</strong> If you think you may have a medical emergency, call your doctor or emergency services immediately. MyDermTerms.com does not recommend or endorse any specific tests, physicians, products, procedures, opinions, or other information that may be mentioned on the site.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>Limitation of Liability.</strong> In no event shall MyDermTerms.com, its owners, contributors, or affiliates be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your access to, use of, or reliance on any information provided on this website.</p>
+      <p style={{ margin:"0 0 0" }}><strong>Use at Your Own Risk.</strong> Your use of any information or materials on this website is entirely at your own risk. You assume full responsibility for any decisions or actions you take based on the information provided.</p>
+    </LegalPage>
+  );
+}
+
+function TermsPage({ onBack, onNavigate }) {
+  return (
+    <LegalPage title="Terms of Use" onBack={onBack} onNavigate={onNavigate}>
+      <p style={{ margin:"0 0 16px" }}><strong>Last updated:</strong> February 2026</p>
+      <p style={{ margin:"0 0 16px" }}>Welcome to MyDermTerms.com. By accessing or using this website, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use this website.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>1. Acceptance of Terms.</strong> By using MyDermTerms.com, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use and our Privacy Policy. We reserve the right to modify these terms at any time, and your continued use of the site constitutes acceptance of any changes.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>2. Purpose and Use.</strong> This website provides general educational information about dermatological conditions and procedures. The content is intended solely for informational purposes and is not a substitute for professional medical advice, diagnosis, or treatment. You may use this site for personal, non-commercial educational purposes only.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>3. Intellectual Property.</strong> All content on this website, including text, graphics, logos, icons, images, and software, is the property of MyDermTerms.com or its content suppliers and is protected by copyright and intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content without prior written consent.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>4. No Medical Advice.</strong> As described in our Medical Disclaimer, nothing on this site constitutes medical advice. Always consult a qualified healthcare professional for medical questions and decisions.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>5. User Conduct.</strong> You agree not to: (a) use the site for any unlawful purpose; (b) attempt to gain unauthorized access to any part of the site; (c) interfere with or disrupt the site or its servers; (d) reproduce or scrape content for commercial purposes without permission; or (e) transmit any harmful code or materials.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>6. Third-Party Links and Advertising.</strong> This site may contain links to third-party websites or display advertisements. We are not responsible for the content, privacy practices, or policies of any third-party sites. The inclusion of any link or advertisement does not imply endorsement by MyDermTerms.com.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>7. Disclaimer of Warranties.</strong> This website is provided on an "as is" and "as available" basis. MyDermTerms.com makes no warranties, express or implied, regarding the site's operation, content accuracy, or availability. We do not warrant that the site will be uninterrupted, error-free, or free of harmful components.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>8. Limitation of Liability.</strong> To the fullest extent permitted by law, MyDermTerms.com and its owners, contributors, and affiliates shall not be liable for any damages of any kind arising from the use of, or inability to use, this website, including but not limited to direct, indirect, incidental, punitive, and consequential damages.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>9. Indemnification.</strong> You agree to indemnify, defend, and hold harmless MyDermTerms.com and its owners, contributors, and affiliates from any claims, losses, damages, liabilities, and expenses arising out of your use of the website or violation of these Terms.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>10. Governing Law.</strong> These Terms of Use shall be governed by and construed in accordance with the laws of the United States. Any disputes arising under these terms shall be resolved in the courts of competent jurisdiction.</p>
+      <p style={{ margin:"0 0 0" }}><strong>11. Contact.</strong> If you have questions about these Terms of Use, please contact us through the website.</p>
+    </LegalPage>
+  );
+}
+
+function PrivacyPage({ onBack, onNavigate }) {
+  return (
+    <LegalPage title="Privacy Policy" onBack={onBack} onNavigate={onNavigate}>
+      <p style={{ margin:"0 0 16px" }}><strong>Last updated:</strong> February 2026</p>
+      <p style={{ margin:"0 0 16px" }}>MyDermTerms.com is committed to protecting your privacy. This Privacy Policy describes how we collect, use, and safeguard information when you visit our website.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>1. Information We Collect.</strong> We do not currently require users to create accounts or provide personal information to use this site. However, we may collect certain non-personal information automatically, including: browser type and version, operating system, referring URLs, pages visited and time spent, IP address (anonymized where possible), and device type.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>2. How We Use Information.</strong> Any information collected is used solely to: improve the functionality and content of our website, analyze usage patterns and site performance, and ensure the security and integrity of our site.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>3. Cookies and Tracking Technologies.</strong> This site may use cookies and similar tracking technologies to enhance your browsing experience. Cookies are small data files stored on your device. You can control cookie settings through your browser preferences. Third-party services such as analytics providers or advertising networks may also place cookies on your device when you visit our site.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>4. Third-Party Advertising.</strong> We may display advertisements from third-party advertising networks on our site. These networks may use cookies, web beacons, or similar technologies to collect information about your visits to this and other websites in order to provide relevant advertisements. We do not control these third-party tracking technologies. Please refer to the respective privacy policies of any third-party advertisers for more information.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>5. Data Sharing.</strong> We do not sell, trade, or otherwise transfer your personal information to outside parties, except: when required by law or to respond to legal process; to protect the rights, property, or safety of MyDermTerms.com or others; or with service providers who assist in site operations, subject to confidentiality agreements.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>6. Data Security.</strong> We implement reasonable security measures to protect against unauthorized access to or alteration of information. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>7. Children's Privacy.</strong> This website is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected such information, we will take steps to delete it promptly.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>8. External Links.</strong> Our site may contain links to other websites. We are not responsible for the privacy practices of these external sites and encourage you to read their privacy policies.</p>
+      <p style={{ margin:"0 0 16px" }}><strong>9. Changes to This Policy.</strong> We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Your continued use of the site after any changes constitutes acceptance of the updated policy.</p>
+      <p style={{ margin:"0 0 0" }}><strong>10. Contact Us.</strong> If you have questions or concerns about this Privacy Policy, please contact us through the website.</p>
+    </LegalPage>
   );
 }
 
 export default function MyDermTerms() {
   var _s = useState(null);
   var active = _s[0]; var setActive = _s[1];
+  var _p = useState(null);
+  var page = _p[0]; var setPage = _p[1];
 
-  if (active) {
-    return <ConditionPage condition={active} onBack={function(){setActive(null)}} />;
+  function handleNavigate(pg) {
+    setActive(null);
+    setPage(pg);
+    window.scrollTo(0, 0);
   }
-  return <ConditionList onSelect={setActive} />;
+
+  if (page === "disclaimer") {
+    return <DisclaimerPage onBack={function(){setPage(null)}} onNavigate={handleNavigate} />;
+  }
+  if (page === "terms") {
+    return <TermsPage onBack={function(){setPage(null)}} onNavigate={handleNavigate} />;
+  }
+  if (page === "privacy") {
+    return <PrivacyPage onBack={function(){setPage(null)}} onNavigate={handleNavigate} />;
+  }
+  if (active) {
+    return <ConditionPage condition={active} onBack={function(){setActive(null)}} onNavigate={handleNavigate} />;
+  }
+  return <ConditionList onSelect={setActive} onNavigate={handleNavigate} />;
 }
