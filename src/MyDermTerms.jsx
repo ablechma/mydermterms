@@ -317,6 +317,13 @@ const CONDITIONS = [
     affectedAreas: ["Face","Scalp","Trunk","Extremities","Any accessible skin area"], prevalence: "One of the most frequently performed diagnostic procedures in dermatology",
   },
   {
+    id: "angiokeratoma", conditionName: "Angiokeratoma", commonName: "Angiokeratoma",
+    description: "Angiokeratomas are small, dark red to purple papules caused by dilated superficial blood vessels with an overlying hyperkeratotic (thickened) epidermis. They can appear as solitary lesions or in clusters and are most commonly found on the lower extremities, scrotum, or vulva. They are benign but may be confused with melanoma due to their dark coloration.",
+    symptoms: ["Small dark red, purple, or black papules","Rough or warty surface texture","May bleed if traumatized","Usually 1-5 mm in diameter","Can appear solitary or in clusters","Painless unless irritated or injured"],
+    careInstructions: ["No treatment is usually required as angiokeratomas are benign.","Avoid picking or scratching to prevent bleeding.","See a dermatologist if a lesion changes rapidly or looks unusual to rule out melanoma.","Treatment options include electrocautery, laser therapy, or cryotherapy if desired.","Monitor for any new or changing lesions.","Protect lesions from trauma in areas prone to friction."],
+    affectedAreas: ["Lower extremities","Scrotum or vulva","Trunk","Fingers","Toes"], prevalence: "Relatively common; solitary angiokeratomas are frequently seen, with Fordyce type affecting up to 14% of older males",
+  },
+  {
     id: "incision-drainage", conditionName: "Incision and Drainage", commonName: "I&D Procedure",
     description: "Incision and drainage (I&D) is a minor surgical procedure used to evacuate fluid or pus from an abscess or cyst. A small incision is made over the lesion to allow drainage of accumulated material, relieving pressure and pain.",
     symptoms: ["Treatment of skin abscesses","Drains infected cysts","Relieves pressure from fluid-filled lesions","Addresses bacterial infections","Treats pilonidal cysts","Manages infected inclusion cysts"],
@@ -327,7 +334,7 @@ const CONDITIONS = [
 
 var CATEGORIES = [
   { label: "All Conditions", filter: null },
-  { label: "Benign Growths", filter: ["seborrheic-keratosis","lichenoid-keratosis","porokeratosis","cherry-angioma","lentigo","dermatofibroma","warts","melanocytic-nevus","atypical-nevus","sebaceous-hyperplasia","epidermal-inclusion-cyst","pilar-cyst","molluscum-contagiosum","pilomatrixoma","milium-cyst"] },
+  { label: "Benign Growths", filter: ["seborrheic-keratosis","lichenoid-keratosis","porokeratosis","cherry-angioma","lentigo","dermatofibroma","warts","melanocytic-nevus","atypical-nevus","sebaceous-hyperplasia","epidermal-inclusion-cyst","pilar-cyst","molluscum-contagiosum","pilomatrixoma","milium-cyst","angiokeratoma"] },
   { label: "Malignant Growths", filter: ["actinic-keratosis","basal-cell-carcinoma","squamous-cell-carcinoma","melanoma","scc-in-situ"] },
   { label: "Rashes", filter: ["eczema","psoriasis","seborrheic-dermatitis","acne","rosacea","periorificial-dermatitis","hidradenitis-suppurativa","vitiligo","melasma","granuloma-annulare","contact-dermatitis","lichen-planus","acne-necrotica-miliaris","discoid-lupus","tinea-versicolor","tinea-corporis","onychomycosis","alopecia-areata","urticaria","hyperhidrosis","herpes-zoster"] },
   { label: "Procedures", filter: ["mohs-surgery","electrodesiccation-curettage","standard-excision","shave-biopsy","incision-drainage"] },
@@ -368,7 +375,7 @@ function ConditionPage({ condition, onBack }) {
   return (
     <div style={{ minHeight:"100vh", backgroundColor:"#f9fafb", fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
       <div style={{ position:"sticky", top:0, zIndex:10, backgroundColor:"rgba(255,255,255,0.95)", borderBottom:"1px solid #e5e7eb", backdropFilter:"blur(8px)" }}>
-        <div style={{ maxWidth:540, margin:"0 auto", padding:"12px 16px", display:"flex", alignItems:"center", gap:12 }}>
+        <div style={{ maxWidth:800, margin:"0 auto", padding:"12px 16px", display:"flex", alignItems:"center", gap:12 }}>
           <button onClick={onBack} style={{ width:36, height:36, borderRadius:10, border:"none", backgroundColor:"#f3f4f6", cursor:"pointer", fontSize:18, display:"flex", alignItems:"center", justifyContent:"center" }}>
             {"<"}
           </button>
@@ -378,7 +385,7 @@ function ConditionPage({ condition, onBack }) {
           </div>
         </div>
       </div>
-      <div style={{ maxWidth:540, margin:"0 auto", padding:"20px 16px 120px", display:"flex", flexDirection:"column", gap:20 }}>
+      <div style={{ maxWidth:800, margin:"0 auto", padding:"20px 16px 40px", display:"flex", flexDirection:"column", gap:20 }}>
         <div>
           <h1 style={{ fontSize:24, fontWeight:800, color:"#111827", margin:0, lineHeight:1.2 }}>{condition.conditionName}</h1>
           <p style={{ fontSize:15, color:"#6b7280", margin:"4px 0 0", fontWeight:500 }}>{condition.commonName}</p>
@@ -446,12 +453,6 @@ function ConditionPage({ condition, onBack }) {
           <p style={{ fontSize:13, color:"#0c4a6e", margin:0, fontFamily:"monospace", wordBreak:"break-all" }}>{permalink}</p>
         </div>
       </div>
-      <div style={{ position:"fixed", bottom:0, left:0, right:0, backgroundColor:"rgba(255,255,255,0.95)", borderTop:"1px solid #e5e7eb", backdropFilter:"blur(8px)", zIndex:10 }}>
-        <div style={{ maxWidth:540, margin:"0 auto", padding:"12px 16px", display:"flex", gap:12 }}>
-          <button style={{ flex:1, padding:"14px 0", borderRadius:12, border:"none", backgroundColor:"#1e40af", color:"#fff", fontWeight:600, fontSize:14, cursor:"pointer", boxShadow:"0 4px 12px rgba(30,64,175,0.3)" }}>Save Condition</button>
-          <button style={{ padding:"14px 20px", borderRadius:12, border:"none", backgroundColor:"#f3f4f6", color:"#374151", fontWeight:600, fontSize:14, cursor:"pointer" }}>Find a Doctor</button>
-        </div>
-      </div>
     </div>
   );
 }
@@ -472,6 +473,7 @@ var CONDITION_COLORS = {
   "urticaria": "#FF6F00", "hyperhidrosis": "#0277BD", "herpes-zoster": "#6A1B9A",
   "pilomatrixoma": "#795548", "milium-cyst": "#90A4AE", "scc-in-situ": "#9C27B0",
   "electrodesiccation-curettage": "#1565C0", "standard-excision": "#0D47A1", "shave-biopsy": "#1976D2",
+  "angiokeratoma": "#8E24AA",
   "incision-drainage": "#0097A7",
 };
 
@@ -540,17 +542,19 @@ function ConditionList({ onSelect }) {
     var matchesSearch = c.conditionName.toLowerCase().indexOf(query.toLowerCase()) !== -1 || c.commonName.toLowerCase().indexOf(query.toLowerCase()) !== -1;
     var matchesCat = catFilter === null || catFilter.indexOf(c.id) !== -1;
     return matchesSearch && matchesCat;
+  }).sort(function(a, b) {
+    return a.conditionName.localeCompare(b.conditionName);
   });
 
   return (
     <div style={{ minHeight:"100vh", backgroundColor:"#f9fafb", fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
       <div style={{ backgroundColor:"#1e40af", color:"#fff", padding:"32px 16px 24px" }}>
-        <div style={{ maxWidth:600, margin:"0 auto" }}>
-          <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:10 }}>
+        <div style={{ maxWidth:1200, margin:"0 auto" }}>
+          <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:10, flexWrap:"wrap" }}>
             <LogoIcon size={40} />
             <span style={{ fontSize:20, fontWeight:800, letterSpacing:-0.5 }}>MyDermTerms</span>
             <div style={{ flex:1 }} />
-            <a href="https://mydermterms.com/downloads/MyDermTerms_QR_Handout.pdf" target="_blank" rel="noopener noreferrer" style={{
+            <a href="/downloads/MyDermTerms_QR_Handout.docx" download style={{
               display:"flex", alignItems:"center", gap:10, padding:"10px 20px",
               borderRadius:12, backgroundColor:"rgba(255,255,255,0.22)",
               border:"1.5px solid rgba(255,255,255,0.4)", color:"#fff",
@@ -582,7 +586,7 @@ function ConditionList({ onSelect }) {
           </div>
         </div>
       </div>
-      <div style={{ maxWidth:600, margin:"0 auto", padding:"14px 16px 0" }}>
+      <div style={{ maxWidth:1200, margin:"0 auto", padding:"14px 16px 0" }}>
         <div style={{ display:"flex", flexWrap:"wrap", gap:8, marginBottom:16 }}>
           {CATEGORIES.map(function(cat) {
             var active = catFilter === cat.filter;
@@ -592,8 +596,8 @@ function ConditionList({ onSelect }) {
           })}
         </div>
       </div>
-      <div style={{ maxWidth:600, margin:"0 auto", padding:"0 16px 32px" }}>
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:10 }}>
+      <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 16px 32px" }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(180px, 1fr))", gap:10 }}>
           {filtered.map(function(condition) {
             return (
               <ConditionTile key={condition.id} condition={condition} onSelect={onSelect} hoveredId={hoveredId} setHoveredId={setHoveredId} />
