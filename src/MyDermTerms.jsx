@@ -386,6 +386,9 @@ function ConditionPage({ condition, onBack, onNavigate }) {
             <LogoIcon size={28} />
             <span style={{ fontWeight:700, fontSize:14, color:"#111827" }}>MyDermTerms</span>
           </div>
+          <button onClick={function(){window.print()}} style={{ width:36, height:36, borderRadius:10, border:"none", backgroundColor:"#f3f4f6", cursor:"pointer", fontSize:16, display:"flex", alignItems:"center", justifyContent:"center" }} title="Print this page">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          </button>
         </div>
       </div>
       <div style={{ maxWidth:800, margin:"0 auto", padding:"20px 16px 40px", display:"flex", flexDirection:"column", gap:20 }}>
@@ -747,6 +750,27 @@ export default function MyDermTerms() {
     window.addEventListener("popstate", onPopState);
     return function() { window.removeEventListener("popstate", onPopState); };
   }, []);
+
+  // Dynamic SEO: update page title and meta description based on current view
+  useEffect(function() {
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (active) {
+      document.title = active.conditionName + " — MyDermTerms.com";
+      if (metaDesc) metaDesc.setAttribute("content", active.description.substring(0, 160));
+    } else if (page === "disclaimer") {
+      document.title = "Medical Disclaimer — MyDermTerms.com";
+      if (metaDesc) metaDesc.setAttribute("content", "Medical disclaimer for MyDermTerms.com. This site is for educational purposes only.");
+    } else if (page === "terms") {
+      document.title = "Terms of Use — MyDermTerms.com";
+      if (metaDesc) metaDesc.setAttribute("content", "Terms of use for MyDermTerms.com dermatology condition guide.");
+    } else if (page === "privacy") {
+      document.title = "Privacy Policy — MyDermTerms.com";
+      if (metaDesc) metaDesc.setAttribute("content", "Privacy policy for MyDermTerms.com.");
+    } else {
+      document.title = "MyDermTerms.com \u2014 Dermatology Condition Guide";
+      if (metaDesc) metaDesc.setAttribute("content", "MyDermTerms - Your dermatology condition guide. Browse " + CONDITIONS.length + " skin conditions with symptoms, care instructions, and QR code handouts.");
+    }
+  }, [active, page]);
 
   function updateUrl(path) {
     window.history.pushState(null, "", path);
