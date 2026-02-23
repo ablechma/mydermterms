@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+// Set to true to show clinical reference images once they are added
+var SHOW_IMAGES = false;
+
 const CONDITIONS = [
   {
     id: "seborrheic-keratosis", conditionName: "Seborrheic Keratosis", commonName: "Seborrheic Keratosis",
@@ -390,11 +393,13 @@ function ConditionPage({ condition, onBack, onNavigate }) {
           <h1 style={{ fontSize:24, fontWeight:800, color:"#111827", margin:0, lineHeight:1.2 }}>{condition.conditionName}</h1>
           <p style={{ fontSize:15, color:"#6b7280", margin:"4px 0 0", fontWeight:500 }}>{condition.commonName}</p>
         </div>
+        {SHOW_IMAGES && (
         <div style={{ width:"100%", borderRadius:16, border:"1px solid #bfdbfe", background:"linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #e0e7ff 100%)", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:8, padding:"40px 20px" }}>
           <span style={{ fontSize:40 }}>{"🔬"}</span>
           <p style={{ fontSize:13, fontWeight:600, color:"#1d4ed8", margin:0 }}>Clinical Reference Image</p>
           <p style={{ fontSize:11, color:"#3b82f6", margin:0 }}>{condition.conditionName}</p>
         </div>
+        )}
         <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
           <div style={{ borderRadius:12, backgroundColor:"#fff", border:"1px solid #e5e7eb", padding:14 }}>
             <p style={{ fontSize:10, fontWeight:700, color:"#6b7280", textTransform:"uppercase", margin:"0 0 6px" }}>Prevalence</p>
@@ -503,6 +508,7 @@ function ConditionTile({ condition, onSelect, hoveredId, setHoveredId }) {
           backgroundColor:"#fff", border:"1px solid #d1d5db",
           boxShadow:"0 8px 30px rgba(0,0,0,0.18)", overflow:"hidden", pointerEvents:"none"
         }}>
+          {SHOW_IMAGES && (
           <div style={{
             width:"100%", height:130,
             background:"linear-gradient(135deg, " + color + "22 0%, " + color + "44 50%, " + color + "66 100%)",
@@ -516,7 +522,8 @@ function ConditionTile({ condition, onSelect, hoveredId, setHoveredId }) {
             }}>{condition.conditionName.charAt(0)}</div>
             <span style={{ fontSize:10, fontWeight:700, color: color, textTransform:"uppercase", letterSpacing:0.5 }}>Clinical Reference</span>
           </div>
-          <div style={{ padding:"8px 12px", backgroundColor:"#f9fafb", borderTop:"1px solid #e5e7eb" }}>
+          )}
+          <div style={{ padding:"8px 12px", backgroundColor:"#f9fafb", borderTop: SHOW_IMAGES ? "1px solid #e5e7eb" : "none" }}>
             <p style={{ fontSize:11, fontWeight:700, color:"#111827", margin:"0 0 2px" }}>{condition.conditionName}</p>
             <p style={{ fontSize:10, color:"#6b7280", margin:0, lineHeight:1.4 }}>{condition.description.substring(0, 80)}...</p>
           </div>
