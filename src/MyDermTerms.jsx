@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Set to true to show clinical reference images once they are added
 var SHOW_IMAGES = false;
@@ -736,6 +736,17 @@ export default function MyDermTerms() {
   var active = _s[0]; var setActive = _s[1];
   var _p = useState(init.page);
   var page = _p[0]; var setPage = _p[1];
+
+  useEffect(function() {
+    function onPopState() {
+      var state = getInitialState();
+      setActive(state.active);
+      setPage(state.page);
+      window.scrollTo(0, 0);
+    }
+    window.addEventListener("popstate", onPopState);
+    return function() { window.removeEventListener("popstate", onPopState); };
+  }, []);
 
   function updateUrl(path) {
     window.history.pushState(null, "", path);
