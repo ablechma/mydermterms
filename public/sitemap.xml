@@ -92,4 +92,10 @@
   <url><loc>https://mydermterms.com/condition/ichthyosis-vulgaris</loc><priority>0.8</priority></url>
   <url><loc>https://mydermterms.com/condition/erythema-migrans</loc><priority>0.8</priority></url>
   <url><loc>https://mydermterms.com/condition/nummular-dermatitis</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/sebaceous-carcinoma</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/pemphigus-vulgaris</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/prurigo-nodularis</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/poison-ivy</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/scleroderma</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/xeroderma-pigmentosum</loc><priority>0.8</priority></url>
 </urlset>
