@@ -333,14 +333,112 @@ const CONDITIONS = [
     careInstructions: ["Change dressings daily or as instructed.","Keep wound clean and dry between changes.","Soak area in warm water to promote drainage.","Apply antibiotic ointment after cleansing.","Take prescribed antibiotics as directed.","Monitor for excessive drainage or signs of spreading infection."],
     affectedAreas: ["Any skin area with abscess","Perirectal region","Axilla","Groin","Other areas prone to infection"], prevalence: "A common procedure performed in dermatology and general medicine for skin and soft tissue infections",
   },
+  {
+    id: "actinic-purpura", conditionName: "Actinic (Solar) Purpura", commonName: "Senile Purpura",
+    description: "Actinic purpura, also called solar purpura or senile purpura, is a common benign condition caused by sun damage and aging that weakens blood vessel walls and the surrounding connective tissue in the skin. This leads to easy bruising, producing dark purple or red blotches, typically on the forearms and hands, from minor trauma or even without noticeable injury.",
+    symptoms: ["Dark purple or red irregularly shaped patches on the skin","Flat, non-raised lesions that do not blanch with pressure","Most common on forearms and dorsal hands","Bruises appear with minimal or no trauma","Lesions resolve slowly over 1\u20133 weeks, often leaving brown discoloration","Thin, fragile, easily torn skin in affected areas"],
+    careInstructions: ["No specific treatment is required as this is a benign condition.","Protect skin from further sun damage with SPF 30+ sunscreen and protective clothing.","Avoid blood thinners and NSAIDs if possible (consult your doctor before stopping medications).","Use moisturizers to help maintain skin integrity.","Wear long sleeves to protect fragile forearm skin from trauma.","See a dermatologist if bruising is unusually severe or widespread to rule out other causes."],
+    affectedAreas: ["Forearms","Dorsal hands","Arms","Any sun-damaged skin"], prevalence: "Extremely common in older adults; affects most people over age 65 with sun-damaged skin",
+  },
+  {
+    id: "acrochordon", conditionName: "Acrochordon (Skin Tag)", commonName: "Skin Tag",
+    description: "Acrochordons, commonly known as skin tags, are small, soft, benign skin growths that hang off the skin by a thin stalk (peduncle). They are composed of loose collagen fibers and blood vessels surrounded by skin. They are extremely common, especially in areas of friction, and are completely harmless.",
+    symptoms: ["Small, soft, flesh-colored or slightly darker growths","Hang from the skin by a thin stalk","Typically 2\u20135 mm but can grow larger","Painless unless irritated by friction, jewelry, or clothing","Often appear in clusters in skin folds","May become irritated or bleed if snagged or twisted"],
+    careInstructions: ["No treatment is necessary since skin tags are benign.","Avoid pulling, twisting, or cutting skin tags at home.","See a dermatologist if a skin tag becomes painful, bleeds, or changes in appearance.","Removal options include snip excision, cryotherapy, or electrocautery.","Skin tags that are frequently irritated by clothing or jewelry may be removed for comfort.","New skin tags may develop even after removal of existing ones."],
+    affectedAreas: ["Neck","Axillae (armpits)","Groin folds","Under breasts","Eyelids"], prevalence: "Extremely common; affects approximately 46% of the general population, increasing with age",
+  },
+  {
+    id: "cafe-au-lait", conditionName: "Caf\u00e9 au Lait Spot", commonName: "Caf\u00e9 au Lait Macule",
+    description: "Caf\u00e9 au lait spots are flat, pigmented birthmarks that are the color of coffee with milk (light brown). They are caused by a higher concentration of melanin in the skin. One or two spots are very common and benign, but having six or more may be associated with neurofibromatosis or other genetic conditions.",
+    symptoms: ["Flat, uniformly light brown (coffee-with-milk colored) patches","Well-defined, smooth borders","Range from a few millimeters to over 20 cm","Present at birth or appear in early childhood","Do not darken significantly with sun exposure","Usually oval or round in shape"],
+    careInstructions: ["No treatment is required for isolated caf\u00e9 au lait spots.","Monitor for the development of additional spots, especially in children.","See a dermatologist or geneticist if six or more spots are present, as this may indicate neurofibromatosis.","Cosmetic treatments such as laser therapy are available if desired.","Spots do not require sun protection beyond normal recommendations.","Photograph spots periodically to track any changes in size or number."],
+    affectedAreas: ["Trunk","Buttocks","Legs","Arms","Anywhere on the body"], prevalence: "Very common; 10\u201320% of the general population has at least one",
+  },
+  {
+    id: "bullous-pemphigoid", conditionName: "Bullous Pemphigoid", commonName: "Bullous Pemphigoid",
+    description: "Bullous pemphigoid is a chronic autoimmune blistering disease that causes large, tense, fluid-filled blisters on the skin. It results from antibodies attacking the basement membrane zone between the epidermis and dermis. It primarily affects older adults and can cause significant discomfort and secondary infections if untreated.",
+    symptoms: ["Large, tense, fluid-filled blisters on the skin","Blisters may arise on normal or reddened skin","Intense itching, often preceding blister formation","Blisters most common on trunk, arms, and legs","Blisters do not rupture easily due to thick roof","May have urticarial (hive-like) patches before blisters appear"],
+    careInstructions: ["See a dermatologist promptly for diagnosis and treatment.","Treatment typically involves topical or systemic corticosteroids.","Keep blisters intact when possible to prevent infection.","Gently cleanse ruptured blisters and apply prescribed topical treatments.","Immunosuppressive medications may be needed for severe or resistant cases.","Attend regular follow-up visits to monitor disease activity and medication side effects."],
+    affectedAreas: ["Trunk","Arms","Legs","Groin","Axillae"], prevalence: "Relatively uncommon; primarily affects adults over age 60, with incidence of approximately 6\u201313 per million per year",
+  },
+  {
+    id: "erysipelas", conditionName: "Erysipelas", commonName: "Erysipelas",
+    description: "Erysipelas is an acute superficial bacterial skin infection, most commonly caused by Group A Streptococcus. It involves the upper dermis and superficial lymphatics, producing a well-demarcated, raised, bright red, painful area of skin. It requires prompt antibiotic treatment to prevent complications.",
+    symptoms: ["Bright red, well-demarcated, raised area of skin","Rapid onset with pain, warmth, and swelling","Skin surface may have an orange-peel (peau d\u0027orange) texture","Fever, chills, and malaise often accompany the rash","May have a clear entry point such as a wound or crack in the skin","Spreading red streaks (lymphangitis) may be visible"],
+    careInstructions: ["Seek medical attention promptly as antibiotics are required.","Complete the full course of prescribed antibiotics (usually penicillin or amoxicillin).","Elevate the affected limb to reduce swelling.","Apply cool compresses for comfort.","Treat any underlying skin breaks, wounds, or athlete\u0027s foot that may have served as entry points.","See a doctor urgently if symptoms worsen despite antibiotic therapy."],
+    affectedAreas: ["Lower legs (most common)","Face","Arms","Trunk"], prevalence: "Common bacterial skin infection; incidence approximately 200 per 100,000 persons per year",
+  },
+  {
+    id: "abscess", conditionName: "Abscess", commonName: "Skin Abscess (Boil)",
+    description: "A skin abscess is a localized collection of pus within the skin and subcutaneous tissue, typically caused by bacterial infection, most commonly Staphylococcus aureus. It forms when bacteria enter through a break in the skin, leading to inflammation, tissue destruction, and an enclosed pocket of pus. Abscesses are painful and often require drainage.",
+    symptoms: ["Firm, tender, fluctuant swelling under the skin","Red, warm, and painful to the touch","May develop a visible white or yellow point (head)","Surrounding skin often red and swollen (cellulitis)","May cause fever if large or deep","Pain increases as the abscess enlarges with pressure buildup"],
+    careInstructions: ["See a healthcare provider for evaluation \u2014 most abscesses require incision and drainage.","Do not attempt to squeeze or lance an abscess at home.","Apply warm compresses to promote drainage and relieve pain.","Take prescribed antibiotics if recommended by your provider.","Keep the area clean and change dressings as instructed after drainage.","Return promptly if the area worsens, spreads, or you develop fever."],
+    affectedAreas: ["Axillae (armpits)","Groin","Buttocks","Face","Any area of skin"], prevalence: "Very common; skin abscesses account for approximately 3% of emergency department visits",
+  },
+  {
+    id: "carbuncle", conditionName: "Carbuncle (Furuncle)", commonName: "Boil / Carbuncle",
+    description: "A furuncle (boil) is a deep infection of a hair follicle resulting in a painful, pus-filled nodule. A carbuncle is a cluster of interconnected furuncles forming a larger, deeper area of infection with multiple drainage points. Both are most commonly caused by Staphylococcus aureus and tend to occur in areas of friction and sweating.",
+    symptoms: ["Painful, red, swollen nodule centered around a hair follicle","Develops a central white or yellow pustular head","Surrounding skin is red, warm, and tender","Carbuncles have multiple heads and drain from several points","May cause fever and malaise, especially with carbuncles","Tender regional lymph nodes may be present"],
+    careInstructions: ["Apply warm, moist compresses several times daily to promote drainage.","See a healthcare provider if the boil is large, on the face, or does not drain on its own.","Do not squeeze or cut open a boil at home.","Take prescribed antibiotics if your provider recommends them.","Keep the area clean and covered after drainage.","Wash hands frequently and avoid sharing towels or razors to prevent spread."],
+    affectedAreas: ["Back of neck","Face","Axillae","Thighs","Buttocks"], prevalence: "Common; furuncles affect approximately 2% of the population annually",
+  },
+  {
+    id: "acanthosis-nigricans", conditionName: "Acanthosis Nigricans", commonName: "Acanthosis Nigricans",
+    description: "Acanthosis nigricans is a skin condition characterized by dark, thick, velvety patches in body folds and creases. It is most commonly associated with insulin resistance and obesity, and can be an early sign of type 2 diabetes. Less commonly, it may be associated with certain medications or underlying malignancies.",
+    symptoms: ["Dark, velvety, thickened patches of skin","Gradual onset, often unnoticed initially","Skin may feel soft and velvety to the touch","Most prominent in skin folds and creases","May be accompanied by skin tags in the same areas","Rarely itchy or painful"],
+    careInstructions: ["See a healthcare provider to evaluate for underlying insulin resistance or diabetes.","Weight loss and increased physical activity can significantly improve the condition.","Treat underlying causes such as diabetes or hormonal imbalances.","Topical retinoids or keratolytics may improve skin appearance.","See a dermatologist if onset is rapid or widespread, as this may indicate an internal malignancy.","Cosmetic treatments are generally not effective without addressing the underlying cause."],
+    affectedAreas: ["Back of neck","Axillae (armpits)","Groin","Knuckles","Elbows"], prevalence: "Common; affects up to 74% of obese adults and is increasingly prevalent with rising obesity rates",
+  },
+  {
+    id: "erythema-multiforme", conditionName: "Erythema Multiforme", commonName: "Erythema Multiforme",
+    description: "Erythema multiforme is an acute, immune-mediated skin condition characterized by distinctive target-shaped (bulls-eye) lesions. It is most commonly triggered by herpes simplex virus (HSV) infection, though medications and other infections can also be causes. It is usually self-limiting but can recur.",
+    symptoms: ["Distinctive target or bulls-eye shaped lesions with concentric rings","Lesions appear symmetrically on the body","Mild itching or burning at lesion sites","May involve the lips and oral mucosa with painful erosions","Lesions evolve over several days, with new crops appearing","Low-grade fever and malaise may accompany the rash"],
+    careInstructions: ["See a dermatologist for diagnosis and to identify the trigger.","Treat underlying herpes simplex infection if identified as the cause.","Symptomatic relief with antihistamines for itching and topical corticosteroids.","Use a gentle mouthwash or topical anesthetic for oral lesions.","Prophylactic antiviral therapy may be prescribed for recurrent HSV-related episodes.","Discontinue any suspected causative medication under medical guidance."],
+    affectedAreas: ["Hands and palms","Feet and soles","Forearms","Face","Oral mucosa"], prevalence: "Relatively uncommon; peak incidence in young adults aged 20\u201340",
+  },
+  {
+    id: "erythema-nodosum", conditionName: "Erythema Nodosum", commonName: "Erythema Nodosum",
+    description: "Erythema nodosum is an inflammatory condition that causes tender, red or violet nodules (bumps) under the skin, most commonly on the shins. It represents a hypersensitivity reaction and can be triggered by infections, medications, inflammatory bowel disease, sarcoidosis, or pregnancy. It is the most common form of panniculitis.",
+    symptoms: ["Tender, firm, red or violet nodules under the skin","Most commonly on the anterior shins","Nodules are warm and painful to the touch","Lesions evolve from red to purple to bruise-like yellow-green over 2\u20136 weeks","Fever, malaise, and joint pain may accompany the nodules","Multiple nodules typically appear in crops bilaterally"],
+    careInstructions: ["See a healthcare provider to identify and treat the underlying cause.","Rest and elevate the legs to reduce pain and swelling.","NSAIDs (ibuprofen, naproxen) can help with pain and inflammation.","Compression stockings may provide comfort.","The condition usually resolves on its own within 6\u20138 weeks.","A workup for underlying conditions such as sarcoidosis or IBD may be recommended."],
+    affectedAreas: ["Shins (most common)","Knees","Ankles","Thighs","Forearms"], prevalence: "Relatively uncommon; more common in women aged 20\u201340, with incidence of 1\u20135 per 100,000 per year",
+  },
+  {
+    id: "erythrasma", conditionName: "Erythrasma", commonName: "Erythrasma",
+    description: "Erythrasma is a common superficial bacterial skin infection caused by Corynebacterium minutissimum. It produces well-demarcated, reddish-brown, slightly scaly patches in intertriginous (skin fold) areas. It is often mistaken for a fungal infection. Diagnosis can be confirmed with a Wood\u0027s lamp, which shows characteristic coral-red fluorescence.",
+    symptoms: ["Well-demarcated, reddish-brown patches","Fine scaling on the surface","Mild itching, often asymptomatic","Located in skin folds and moist areas","Patches may slowly enlarge over time","Coral-red fluorescence under Wood\u0027s lamp examination"],
+    careInstructions: ["Topical erythromycin or clindamycin applied twice daily for 2 weeks is first-line treatment.","Keep affected areas clean and dry.","Antibacterial soaps may help prevent recurrence.","Oral erythromycin may be prescribed for widespread or resistant cases.","Wear breathable, loose-fitting clothing to reduce moisture in skin folds.","Manage underlying conditions like diabetes or obesity that increase risk."],
+    affectedAreas: ["Groin","Axillae (armpits)","Inframammary folds","Toe web spaces","Intergluteal cleft"], prevalence: "Common; affects approximately 4% of the population, more prevalent in warm, humid climates and in diabetics",
+  },
+  {
+    id: "angioedema", conditionName: "Angioedema", commonName: "Angioedema",
+    description: "Angioedema is a sudden swelling of the deeper layers of the skin (dermis and subcutaneous tissue), often occurring around the eyes, lips, tongue, and throat. It can be allergic (histamine-mediated), hereditary (bradykinin-mediated), or medication-induced (commonly from ACE inhibitors). Severe cases involving the airway require emergency treatment.",
+    symptoms: ["Sudden swelling of the face, lips, tongue, or throat","Swelling of hands, feet, or genitals","Skin may feel tight or tingly before swelling","Usually not itchy, unlike hives","Abdominal pain and nausea in hereditary forms","Difficulty breathing or swallowing if throat is involved (medical emergency)"],
+    careInstructions: ["Seek emergency medical care immediately if there is throat swelling or difficulty breathing.","Antihistamines can help with mild allergic angioedema.","Identify and avoid triggers such as medications, foods, or allergens.","If caused by an ACE inhibitor, your doctor must discontinue the medication.","Carry an epinephrine auto-injector if you have a history of severe episodes.","See an allergist for evaluation, especially if episodes are recurrent or the cause is unclear."],
+    affectedAreas: ["Lips","Eyelids","Tongue","Throat","Hands","Feet"], prevalence: "Common; affects approximately 15% of the population at some point in their lifetime",
+  },
+  {
+    id: "cold-sore", conditionName: "Cold Sore (Herpes Simplex)", commonName: "Cold Sore / Fever Blister",
+    description: "Cold sores are small, painful, fluid-filled blisters caused by herpes simplex virus type 1 (HSV-1), though HSV-2 can also cause them. After initial infection, the virus remains dormant in nerve ganglia and can reactivate periodically, especially during times of stress, illness, sun exposure, or immune suppression. Cold sores are highly contagious.",
+    symptoms: ["Tingling, itching, or burning sensation before blisters appear (prodrome)","Cluster of small, fluid-filled blisters on or around the lips","Blisters break open and form a shallow ulcer, then crust over","Pain and tenderness at the blister site","Healing typically takes 7\u201314 days","Recurrences often occur in the same location"],
+    careInstructions: ["Start antiviral medication (acyclovir, valacyclovir) at the first sign of tingling for best results.","Apply topical antiviral cream (docosanol or acyclovir) as directed.","Avoid touching, picking, or squeezing blisters to prevent spread.","Do not kiss or share utensils, towels, or lip products during an outbreak.","Protect lips from sun exposure with SPF lip balm, as UV light can trigger recurrences.","See a doctor about daily suppressive antiviral therapy if outbreaks are frequent."],
+    affectedAreas: ["Lips (most common)","Around the mouth","Nose","Chin","Inside the mouth"], prevalence: "Extremely common; approximately 67% of the global population under age 50 has HSV-1 infection",
+  },
+  {
+    id: "cryosurgery", conditionName: "Cryosurgery", commonName: "Cryotherapy / Freezing",
+    description: "Cryosurgery (cryotherapy) is a common dermatological procedure that uses extreme cold, typically liquid nitrogen at -196\u00b0C, to destroy abnormal or diseased tissue. It is a quick, minimally invasive procedure used to treat a wide variety of benign and premalignant skin lesions. The freezing causes cell death and the treated lesion typically blisters and falls off within 1\u20133 weeks.",
+    symptoms: ["Treatment of actinic keratoses (precancerous spots)","Removal of warts and viral lesions","Treatment of seborrheic keratoses","Removal of skin tags","Treatment of molluscum contagiosum","Destruction of superficial basal cell carcinomas in select cases"],
+    careInstructions: ["A blister or scab will form at the treatment site \u2014 this is normal.","Keep the area clean and apply petroleum jelly or prescribed ointment.","Do not pick at or remove the blister or scab; let it heal naturally.","Mild pain, redness, and swelling are expected for 1\u20133 days after treatment.","Take over-the-counter pain medication if needed.","Temporary lightening or darkening of the skin at the treatment site is common and usually fades."],
+    affectedAreas: ["Face","Hands","Arms","Trunk","Legs","Any accessible skin surface"], prevalence: "One of the most commonly performed dermatologic procedures worldwide",
+  },
 ];
 
 var CATEGORIES = [
   { label: "All Conditions", filter: null },
-  { label: "Benign Growths", filter: ["seborrheic-keratosis","lichenoid-keratosis","porokeratosis","cherry-angioma","lentigo","dermatofibroma","warts","melanocytic-nevus","atypical-nevus","sebaceous-hyperplasia","epidermal-inclusion-cyst","pilar-cyst","molluscum-contagiosum","pilomatrixoma","milium-cyst","angiokeratoma"] },
+  { label: "Benign Growths", filter: ["seborrheic-keratosis","lichenoid-keratosis","porokeratosis","cherry-angioma","lentigo","dermatofibroma","warts","melanocytic-nevus","atypical-nevus","sebaceous-hyperplasia","epidermal-inclusion-cyst","pilar-cyst","molluscum-contagiosum","pilomatrixoma","milium-cyst","angiokeratoma","actinic-purpura","acrochordon","cafe-au-lait"] },
   { label: "Malignant Growths", filter: ["actinic-keratosis","basal-cell-carcinoma","squamous-cell-carcinoma","melanoma","scc-in-situ"] },
-  { label: "Rashes", filter: ["eczema","psoriasis","seborrheic-dermatitis","acne","rosacea","periorificial-dermatitis","hidradenitis-suppurativa","vitiligo","melasma","granuloma-annulare","contact-dermatitis","lichen-planus","acne-necrotica-miliaris","discoid-lupus","tinea-versicolor","tinea-corporis","onychomycosis","alopecia-areata","urticaria","hyperhidrosis","herpes-zoster"] },
-  { label: "Procedures", filter: ["mohs-surgery","electrodesiccation-curettage","standard-excision","shave-biopsy","incision-drainage"] },
+  { label: "Rashes", filter: ["eczema","psoriasis","seborrheic-dermatitis","acne","rosacea","periorificial-dermatitis","hidradenitis-suppurativa","vitiligo","melasma","granuloma-annulare","contact-dermatitis","lichen-planus","acne-necrotica-miliaris","discoid-lupus","tinea-versicolor","tinea-corporis","onychomycosis","alopecia-areata","urticaria","hyperhidrosis","herpes-zoster","bullous-pemphigoid","erysipelas","abscess","carbuncle","acanthosis-nigricans","erythema-multiforme","erythema-nodosum","erythrasma","angioedema","cold-sore"] },
+  { label: "Procedures", filter: ["mohs-surgery","electrodesiccation-curettage","standard-excision","shave-biopsy","incision-drainage","cryosurgery"] },
 ];
 
 function LogoIcon({ size }) {
@@ -484,6 +582,11 @@ var CONDITION_COLORS = {
   "electrodesiccation-curettage": "#1565C0", "standard-excision": "#0D47A1", "shave-biopsy": "#1976D2",
   "angiokeratoma": "#8E24AA",
   "incision-drainage": "#0097A7",
+  "actinic-purpura": "#7B1FA2", "acrochordon": "#8D6E63", "cafe-au-lait": "#A1887F",
+  "bullous-pemphigoid": "#C62828", "erysipelas": "#D50000", "abscess": "#BF360C",
+  "carbuncle": "#E65100", "acanthosis-nigricans": "#3E2723", "erythema-multiforme": "#AD1457",
+  "erythema-nodosum": "#880E4F", "erythrasma": "#4E342E", "angioedema": "#1565C0",
+  "cold-sore": "#D81B60", "cryosurgery": "#00838F",
 };
 
 function ConditionTile({ condition, onSelect, hoveredId, setHoveredId }) {
