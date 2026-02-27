@@ -586,8 +586,8 @@ function ConditionPage({ condition, onBack, onNavigate }) {
             {"<"}
           </button>
           <div style={{ flex:1, display:"flex", alignItems:"center", gap:8 }}>
-            <LogoIcon size={28} />
-            <span style={{ fontWeight:700, fontSize:14, color:"#111827" }}>MyDermTerms</span>
+            <LogoIcon size={32} />
+            <span style={{ fontWeight:700, fontSize:18, color:"#111827" }}>MyDermTerms</span>
           </div>
           <button onClick={function(){window.print()}} style={{ width:36, height:36, borderRadius:10, border:"none", backgroundColor:"#f3f4f6", cursor:"pointer", fontSize:16, display:"flex", alignItems:"center", justifyContent:"center" }} title="Print this page">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
@@ -775,8 +775,8 @@ function ConditionList({ onSelect, onNavigate }) {
       <div style={{ backgroundColor:"#1e40af", color:"#fff", padding:"32px 16px 24px" }}>
         <div style={{ maxWidth:1200, margin:"0 auto" }}>
           <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:10, flexWrap:"wrap" }}>
-            <LogoIcon size={40} />
-            <span style={{ fontSize:20, fontWeight:800, letterSpacing:-0.5 }}>MyDermTerms</span>
+            <LogoIcon size={48} />
+            <span style={{ fontSize:28, fontWeight:800, letterSpacing:-0.5 }}>MyDermTerms</span>
             <div style={{ flex:1 }} />
             <a href="/downloads/MyDermTerms_QR_Handout.pdf" download style={{
               display:"flex", alignItems:"center", gap:10, padding:"10px 20px",
@@ -864,8 +864,8 @@ function LegalPage({ title, onBack, onNavigate, children }) {
         <div style={{ maxWidth:800, margin:"0 auto", padding:"12px 16px", display:"flex", alignItems:"center", gap:12 }}>
           <button onClick={onBack} style={{ width:36, height:36, borderRadius:10, border:"none", backgroundColor:"#f3f4f6", cursor:"pointer", fontSize:18, display:"flex", alignItems:"center", justifyContent:"center" }}>{"<"}</button>
           <div style={{ flex:1, display:"flex", alignItems:"center", gap:8 }}>
-            <LogoIcon size={28} />
-            <span style={{ fontWeight:700, fontSize:14, color:"#111827" }}>MyDermTerms</span>
+            <LogoIcon size={32} />
+            <span style={{ fontWeight:700, fontSize:18, color:"#111827" }}>MyDermTerms</span>
           </div>
         </div>
       </div>
