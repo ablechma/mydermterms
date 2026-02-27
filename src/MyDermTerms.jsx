@@ -47,7 +47,7 @@ const CONDITIONS = [
     affectedAreas: ["Legs (most common)","Arms","Trunk"], prevalence: "Common; more frequently seen in women than men",
   },
   {
-    id: "warts", conditionName: "Warts (Verruca Vulgaris)", commonName: "Common Warts",
+    id: "warts", conditionName: "Verruca Vulgaris (Warts)", commonName: "Common Warts",
     description: "Common warts are benign skin growths caused by human papillomavirus (HPV) infection. They appear as rough, raised bumps with a characteristic rough surface and may have small dark dots (thrombosed capillaries). They are contagious through direct contact.",
     symptoms: ["Rough, raised, rounded bumps with an irregular surface","Flesh-colored, white, pink, or tan appearance","Small black dots within the wart (thrombosed capillaries)","May occur singly or in clusters (mosaic warts)","Typically painless, though plantar warts can cause discomfort","May spread to other areas through scratching or shaving"],
     careInstructions: ["Over-the-counter salicylic acid treatments can be effective with consistent daily use.","Avoid picking, biting, or scratching warts, which can spread the virus.","Keep warts covered with a bandage to reduce spread to others.","Wash hands thoroughly after touching a wart.","See a dermatologist if warts are persistent, painful, spreading, or on the face.","Professional treatments include cryotherapy, laser therapy, and immunotherapy."],
@@ -418,7 +418,7 @@ const CONDITIONS = [
     affectedAreas: ["Lips","Eyelids","Tongue","Throat","Hands","Feet"], prevalence: "Common; affects approximately 15% of the population at some point in their lifetime",
   },
   {
-    id: "cold-sore", conditionName: "Cold Sore (Herpes Simplex)", commonName: "Cold Sore / Fever Blister",
+    id: "cold-sore", conditionName: "Herpes Simplex (Cold Sores)", commonName: "Cold Sore / Fever Blister",
     description: "Cold sores are small, painful, fluid-filled blisters caused by herpes simplex virus type 1 (HSV-1), though HSV-2 can also cause them. After initial infection, the virus remains dormant in nerve ganglia and can reactivate periodically, especially during times of stress, illness, sun exposure, or immune suppression. Cold sores are highly contagious.",
     symptoms: ["Tingling, itching, or burning sensation before blisters appear (prodrome)","Cluster of small, fluid-filled blisters on or around the lips","Blisters break open and form a shallow ulcer, then crust over","Pain and tenderness at the blister site","Healing typically takes 7\u201314 days","Recurrences often occur in the same location"],
     careInstructions: ["Start antiviral medication (acyclovir, valacyclovir) at the first sign of tingling for best results.","Apply topical antiviral cream (docosanol or acyclovir) as directed.","Avoid touching, picking, or squeezing blisters to prevent spread.","Do not kiss or share utensils, towels, or lip products during an outbreak.","Protect lips from sun exposure with SPF lip balm, as UV light can trigger recurrences.","See a doctor about daily suppressive antiviral therapy if outbreaks are frequent."],
@@ -446,7 +446,7 @@ const CONDITIONS = [
     affectedAreas: ["Upper back","Shoulders","Neck","Arms","Trunk","Thighs"], prevalence: "Very common; affects approximately 1% of the population, more common in adults aged 40\u201360",
   },
   {
-    id: "ephelis", conditionName: "Freckle (Ephelis)", commonName: "Freckles",
+    id: "ephelis", conditionName: "Ephelis (Freckle)", commonName: "Freckles",
     description: "Freckles (ephelides) are small, flat, light to dark brown spots that appear on sun-exposed skin. They are caused by an increase in melanin production (not an increase in melanocyte number) in response to UV radiation. They are most common in fair-skinned individuals and tend to fade in winter and darken in summer.",
     symptoms: ["Small, flat, light brown to dark brown spots","Typically 1\u20135 mm in diameter","Appear on sun-exposed areas of skin","Darken with sun exposure and fade in winter","More common in fair-skinned and red-haired individuals","Usually appear in childhood and may decrease with age"],
     careInstructions: ["No treatment is required as freckles are completely benign.","Apply broad-spectrum SPF 30+ sunscreen daily to prevent darkening.","Wear hats and protective clothing during peak sun hours.","See a dermatologist if any spot becomes irregular, multicolored, or rapidly changing.","Cosmetic treatments such as laser therapy or chemical peels are available if desired.","Distinguish from lentigines, which do not fade with reduced sun exposure."],
