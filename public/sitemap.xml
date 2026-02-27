@@ -65,4 +65,19 @@
   <url><loc>https://mydermterms.com/condition/angioedema</loc><priority>0.8</priority></url>
   <url><loc>https://mydermterms.com/condition/cold-sore</loc><priority>0.8</priority></url>
   <url><loc>https://mydermterms.com/condition/cryosurgery</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/blue-nevus</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/lipoma</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/ephelis</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/keloid</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/pyogenic-granuloma</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/spider-angioma</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/telangiectasia</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/folliculitis</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/impetigo</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/keratosis-pilaris</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/lichen-simplex-chronicus</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/paronychia</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/pityriasis-rosea</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/scabies</loc><priority>0.8</priority></url>
+  <url><loc>https://mydermterms.com/condition/xerosis</loc><priority>0.8</priority></url>
 </urlset>
